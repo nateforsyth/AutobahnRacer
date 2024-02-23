@@ -1,9 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject berm;
+    public GameObject centreDivider;
+
+    public float speed = 20f;
+    public float turnSpeed = 45f;
+    private float horizontalInput;
+    private float verticalInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +19,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+
+        transform.Translate(speed * Time.deltaTime * verticalInput * Vector3.forward);
+        transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
     }
 }
