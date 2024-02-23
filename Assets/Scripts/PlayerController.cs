@@ -24,5 +24,10 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(speed * Time.deltaTime * verticalInput * Vector3.forward);
         transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.Rotate(transform.position.x, 360f, transform.position.z);
+        }
     }
 }
