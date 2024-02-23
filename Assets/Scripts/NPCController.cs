@@ -17,4 +17,9 @@ public class NPCController : MonoBehaviour
     {
         transform.Translate(speed * Time.deltaTime * Vector3.forward);
     }
+
+    public void ChangeSpeed(float targetSpeed)
+    {
+        speed = targetSpeed;
+    }
 }
