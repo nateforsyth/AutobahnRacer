@@ -149,3 +149,4 @@ PackageBackups/
 # Archives
 *.zip
 *.rar
+.fake
